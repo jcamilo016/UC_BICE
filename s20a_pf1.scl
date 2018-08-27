@@ -1,0 +1,23 @@
+﻿Resqscript 2
+dump "************* s20a_pf1.scl start ****************"
+
+getobjectname object 17;7
+substr type_obj object 0;5
+dump type_obj
+
+if type_obj = "LABEL"
+	set prefix @5,11,1
+	dump prefix
+	if (prefix = "B")
+		dump "B => PF1"
+		senddirect "PF1"
+	else
+		senddirect "Enter"
+	end
+else
+	senddirect "PF1"
+end
+
+dump "************* s20a_pf1.scl end ****************"
+Stop
+//CheckSum=drxm2D5o5QK+mr+YShi/qhjk3Fs=
